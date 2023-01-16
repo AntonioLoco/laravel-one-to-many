@@ -11,11 +11,11 @@ class Project extends Model
     use HasFactory;
 
     protected $fillable = [
-        "title", "description", "link", "slug", "image_cover"
+        "title", "description", "link", "slug", "image_cover", "type_id"
     ];
 
-    public static function generateSlug($title)
+    public function type()
     {
-        return Str::slug($title, "-");
+        return $this->belongsTo(Type::class);
     }
 }

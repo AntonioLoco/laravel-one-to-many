@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Functions\Helpers;
 use App\Models\Project;
 use Faker\Factory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
 
 class ProjectSeeder extends Seeder
 {
@@ -24,7 +24,7 @@ class ProjectSeeder extends Seeder
             $newProject->title = $faker->sentence(3);
             $newProject->description = $faker->text(150);
             $newProject->link = $faker->text(50);
-            $newProject->slug = Str::slug($newProject->title, "-");
+            $newProject->slug = Helpers::generateSlug($newProject->title);
             $newProject->save();
         }
     }
