@@ -24,6 +24,9 @@
                             <tr>
                                 <th scope="row">{{ $type->name }}</th>
                                 <td>
+                                    <a class="btn btn-success" href="{{ route('admin.types.show', $type->slug) }}">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
                                     <a class="btn btn-warning" href="{{ route('admin.types.edit', $type->slug) }}">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a>
