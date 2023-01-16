@@ -10,20 +10,24 @@
                 </div>
             @endif
             <div class="col-8">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nome</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($projects as $project)
+                @if (count($projects) > 0)
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <th scope="row">{{ $project->title }}</th>
+                                <th scope="col">Nome</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach ($projects as $project)
+                                <tr>
+                                    <th scope="row">{{ $project->title }}</th>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                @else
+                    <h5 class="text-center mt-5">Nessun progetto</h5>
+                @endif
             </div>
         </div>
     </div>
