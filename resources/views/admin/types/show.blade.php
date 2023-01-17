@@ -10,7 +10,7 @@
                 </div>
             @endif
             <div class="col-8">
-                @if (count($projects) > 0)
+                @if (count($type->projects) > 0)
                     <table class="table">
                         <thead>
                             <tr>
@@ -18,7 +18,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($projects as $project)
+                            @foreach ($type->projects as $project)
                                 <tr>
                                     <th scope="row">{{ $project->title }}</th>
                                 </tr>
